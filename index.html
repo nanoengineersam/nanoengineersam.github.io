@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name — Research & Engineering</title>
+<style>
+:root{
+  --bg:#f7f8f6; --paper:#fff; --ink:#17202a; --muted:#68737e;
+  --line:#dfe4e1; --accent:#2563eb; --soft:#edf3ff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Arial,sans-serif}
+a{text-decoration:none;color:inherit}
+.nav{position:sticky;top:0;z-index:20;height:76px;padding:0 6vw;display:flex;align-items:center;justify-content:space-between;background:rgba(247,248,246,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.logo{font-size:17px;font-weight:700;letter-spacing:-.04em}.logo b{color:var(--accent)}
+.navlinks{display:flex;gap:34px;font-size:13px;color:var(--muted)}
+.navlinks a:hover{color:var(--ink)}
+.cv{font-size:13px;font-weight:700}
+.hero{max-width:1450px;margin:auto;min-height:calc(100vh - 76px);padding:8vh 6vw;display:grid;grid-template-columns:1.05fr .95fr;gap:7vw;align-items:center}
+.kicker{font:11px "Courier New",monospace;letter-spacing:.12em;color:var(--muted)}
+.kicker i{display:inline-block;width:7px;height:7px;background:var(--accent);border-radius:50%;margin-right:8px}
+h1{font-size:clamp(52px,6.2vw,88px);line-height:.98;letter-spacing:-.065em;margin:24px 0 30px;font-weight:700}
+h1 em,h2 em{font-family:Georgia,serif;font-weight:400;color:var(--accent)}
+.lead{max-width:590px;color:var(--muted);font-size:17px;line-height:1.7}
+.actions{display:flex;gap:12px;margin-top:34px}
+.btn{padding:14px 19px;border:1px solid #ccd3cf;font-size:13px;font-weight:700;display:inline-flex;gap:9px;align-items:center}
+.btn.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn.secondary:hover{background:#fff}
+.visual{height:550px;border:1px solid var(--line);background:#edf0ed;position:relative;overflow:hidden}
+.grid{position:absolute;inset:-20%;background-image:linear-gradient(#d9dfdb 1px,transparent 1px),linear-gradient(90deg,#d9dfdb 1px,transparent 1px);background-size:46px 46px;transform:perspective(550px) rotateX(60deg) scale(1.35);transform-origin:center bottom;top:32%}
+.orbit{position:absolute;left:50%;top:47%;width:330px;height:125px;border:1px solid #87939e;border-radius:50%;transform:translate(-50%,-50%) rotate(-20deg)}
+.orbit.two{transform:translate(-50%,-50%) rotate(65deg)}
+.core{position:absolute;left:50%;top:47%;width:48px;height:48px;border:2px solid var(--accent);border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 0 10px rgba(37,99,235,.07)}
+.core:after{content:"";position:absolute;left:50%;top:50%;width:8px;height:8px;border-radius:50%;background:var(--accent);transform:translate(-50%,-50%)}
+.vlabel{position:absolute;left:25px;bottom:22px;font:10px/1.8 "Courier New",monospace;letter-spacing:.12em}
+.vlabel span{color:#8a949c}
+section{padding:110px 6vw;max-width:1450px;margin:auto}
+.profile{border-top:1px solid var(--line)}
+.profilegrid{display:grid;grid-template-columns:1.15fr .85fr;gap:8vw;margin-top:36px}
+h2{font-size:clamp(40px,4.6vw,64px);line-height:1;letter-spacing:-.055em;margin:0}
+.copy{color:var(--muted);font-size:15px;line-height:1.8}
+.capabilities{background:#fff;max-width:none}
+.cap-inner,.projects-inner,.skills-inner{max-width:1330px;margin:auto}
+.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:48px}
+.sectionhead>p{max-width:400px;color:var(--muted);font-size:14px;line-height:1.7;margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.card{padding:32px 35px 28px 0;border-right:1px solid var(--line);min-height:260px}
+.card+.card{padding-left:35px}.card:last-child{border-right:0}
+.card .num{float:right;font:10px "Courier New";color:#9ca5ac}
+.icon{font-size:25px;color:var(--accent);margin-bottom:52px}
+.card h3{font-size:24px;margin:0 0 12px;letter-spacing:-.03em}.card p{font-size:14px;color:var(--muted);line-height:1.7}
+.projectrow{display:grid;grid-template-columns:70px 1fr 300px 30px;gap:25px;align-items:center;padding:31px 0;border-top:1px solid var(--line)}
+.projectrow:last-child{border-bottom:1px solid var(--line)}
+.pnum,.ptype{font:10px "Courier New";color:#8b959d}.ptype{letter-spacing:.08em}
+.projectrow h3{font-size:28px;margin:4px 0}.projectrow p{margin:0;color:var(--muted);font-size:13px;line-height:1.6}.arrow{font-size:22px;color:var(--accent)}
+.skills{background:var(--ink);color:#fff;max-width:none}
+.skillgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:45px;margin-top:55px}
+.skill h3{font-size:17px}.skill p{color:#aeb7bf;line-height:1.8;font-size:13px}
+.contact{text-align:center;background:#fff;max-width:none}
+.contact h2{margin:20px 0}.contact .copy{max-width:550px;margin:0 auto 35px}
+.links{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}.links a{border:1px solid var(--line);padding:12px 16px;font-size:12px;font-weight:600}.links a:hover{background:var(--bg)}
+footer{border-top:1px solid var(--line);padding:23px 6vw;display:flex;justify-content:space-between;color:#8b959d;font:10px "Courier New";letter-spacing:.05em}
+@media(max-width:850px){
+ .nav{padding:0 5vw}.navlinks{display:none}
+ .hero{grid-template-columns:1fr;padding:65px 5vw}.visual{height:390px}
+ section{padding:75px 5vw}.profilegrid,.cards,.skillgrid{grid-template-columns:1fr}
+ .card,.card+.card{padding:28px 0;border-right:0;border-bottom:1px solid var(--line)}.card:last-child{border-bottom:0}
+ .sectionhead{display:block}.sectionhead>p{margin-top:20px}
+ .projectrow{grid-template-columns:42px 1fr 25px}.projectrow p{display:none}
+ footer{flex-direction:column;gap:8px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="#">YOUR NAME<b>.</b></a>
+  <nav class="navlinks">
+    <a href="#research">Research</a>
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="cv" href="#contact">CV ↗</a>
+</header>
+
+<main>
+<section class="hero">
+  <div>
+    <div class="kicker"><i></i>PHYSICS · NANOTECHNOLOGY · ENGINEERING</div>
+    <h1>From nanoscale<br><em>physics</em> to precision<br>engineering.</h1>
+    <p class="lead">Researching semiconductor materials and nanoscale phenomena while building experimental, electronic and robotic systems.</p>
+    <div class="actions">
+      <a class="btn primary" href="#projects">Explore my work ↗</a>
+      <a class="btn secondary" href="#contact">Get in touch</a>
+    </div>
+  </div>
+  <div class="visual">
+    <div class="grid"></div>
+    <div class="orbit"></div><div class="orbit two"></div><div class="core"></div>
+    <div class="vlabel">NANO / PRECISION<br><span>RESEARCH · HARDWARE · COMPUTATION</span></div>
+  </div>
+</section>
+
+<section class="profile" id="about">
+  <div class="kicker">01 / PROFILE</div>
+  <div class="profilegrid">
+    <h2>Researcher with an<br><span>engineering mindset.</span></h2>
+    <div class="copy">
+      <p>I work across experimental physics, computational materials science and precision mechatronics.</p>
+      <p>The goal is practical: understand phenomena at small scales, measure them reliably, and turn that understanding into working systems.</p>
+    </div>
+  </div>
+</section>
+
+<section class="capabilities" id="research">
+<div class="cap-inner">
+  <div class="sectionhead">
+    <div><div class="kicker">02 / CAPABILITIES</div><h2 style="margin-top:14px">What I work on</h2></div>
+    <p>Scientific research connected with computation, electronics and precision hardware.</p>
+  </div>
+  <div class="cards">
+    <article class="card"><div class="icon">◌</div><span class="num">01</span><h3>Nanotechnology</h3><p>AFM · SPM · ESM · SEM · Raman · nanoscale characterization.</p></article>
+    <article class="card"><div class="icon">⌬</div><span class="num">02</span><h3>Computational Physics</h3><p>DFT modelling, defect energetics, electronic structure and Quantum ESPRESSO.</p></article>
+    <article class="card"><div class="icon">⊙</div><span class="num">03</span><h3>Mechatronics</h3><p>STM32, embedded control, stepper motors, electronics and precision motion.</p></article>
+  </div>
+</div>
+</section>
+
+<section class="projects" id="projects">
+<div class="projects-inner">
+  <div class="sectionhead">
+    <div><div class="kicker">03 / SELECTED WORK</div><h2 style="margin-top:14px">Projects</h2></div>
+    <p>Research and engineering projects showing how I approach complex physical systems.</p>
+  </div>
+  <div class="projectrow"><div class="pnum">01</div><div><div class="ptype">RESEARCH</div><h3>Nickel in Silicon</h3></div><p>DFT · Defect Physics · AFM / ESM</p><div class="arrow">↗</div></div>
+  <div class="projectrow"><div class="pnum">02</div><div><div class="ptype">ROBOTICS</div><h3>OpenDerm</h3></div><p>STM32 · Stepper Control · Mechatronics</p><div class="arrow">↗</div></div>
+  <div class="projectrow"><div class="pnum">03</div><div><div class="ptype">PRECISION</div><h3>AFM / SPM</h3></div><p>Nanoscale Measurement · Nanopositioning</p><div class="arrow">↗</div></div>
+</div>
+</section>
+
+<section class="skills">
+<div class="skills-inner">
+  <div class="kicker">04 / TOOLKIT</div>
+  <div class="skillgrid">
+    <div class="skill"><h3>Research</h3><p>AFM · SEM · ESM · Raman · Van der Pauw · Nanostructures</p></div>
+    <div class="skill"><h3>Simulation</h3><p>Quantum ESPRESSO · DFT · ASE · Python · MATLAB · COMSOL</p></div>
+    <div class="skill"><h3>Engineering</h3><p>STM32 · Embedded C/C++ · Electronics · Motion Control · CAD</p></div>
+  </div>
+</div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="kicker">05 / CONTACT</div>
+  <h2>Let's build something<br><em>precise.</em></h2>
+  <p class="copy">Research collaboration, engineering projects, postdoc opportunities or technical work.</p>
+  <div class="links">
+    <a href="mailto:your.email@example.com">✉ your.email@example.com</a>
+    <a href="#">GitHub ↗</a>
+    <a href="#">Download CV ↗</a>
+  </div>
+</section>
+</main>
+
+<footer><span>© 2026 YOUR NAME</span><span>Research · Engineering · Precision</span></footer>
+</body>
+</html>
