@@ -1,25 +1,277 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Mechatronics — Nanoengineer Sam</title><link rel="stylesheet" href="style.css"></head><body><header class="nav">
-  <a class="logo" href="index.html">NANOENGINEER <b>SAM.</b></a>
-  <nav class="navlinks">
-    <a href="index.html">Home</a>
-    <div class="dropdown">
-      <button class="dropdown-button">Research</button>
-      <div class="dropdown-menu">
-        <a href="nanotechnology.html">Nanotechnology<small>AFM · SPM · SEM · Raman</small></a>
-        <a href="computational-physics.html">Computational Physics<small>DFT · Quantum ESPRESSO · Python</small></a>
-        <a href="mechatronics.html">Mechatronics<small>STM32 · Motion · Robotics</small></a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mechatronics projects — embedded control, motion systems, robotics and electromechanical engineering.">
+  <title>Mechatronics — NANOENGINEER SAM.</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Project media */
+    .project-media {
+      margin-top: 42px;
+    }
+
+    .project-media h3 {
+      margin: 0 0 16px;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .project-video {
+      width: 100%;
+      display: block;
+      background: #000;
+      border-radius: 22px;
+      border: 1px solid rgba(0,0,0,.08);
+      box-shadow: 0 12px 35px rgba(0,0,0,.08);
+    }
+
+    .media-caption {
+      margin: 14px 0 0;
+      color: #6e6e73;
+      line-height: 1.65;
+      max-width: 820px;
+    }
+
+    .project-image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 36px;
+    }
+
+    .project-image {
+      width: 100%;
+      display: block;
+      border-radius: 22px;
+      border: 1px solid rgba(0,0,0,.08);
+      box-shadow: 0 12px 35px rgba(0,0,0,.08);
+    }
+
+    @media (max-width: 700px) {
+      .project-image-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="nav">
+    <a class="logo" href="index.html">NANOENGINEER <b>SAM.</b></a>
+
+    <nav class="navlinks">
+      <a href="index.html">Home</a>
+
+      <div class="dropdown">
+        <button class="dropdown-button">Research</button>
+        <div class="dropdown-menu">
+          <a href="nanotechnology.html">
+            Nanotechnology
+            <small>AFM · SPM · SEM · Raman</small>
+          </a>
+          <a href="computational-physics.html">
+            Computational Physics
+            <small>DFT · Quantum ESPRESSO · Python</small>
+          </a>
+          <a href="mechatronics.html">
+            Mechatronics
+            <small>STM32 · Motion · Robotics</small>
+          </a>
+        </div>
       </div>
+
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+      <a class="cv" href="#" title="Add your CV PDF link here">CV ↗</a>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!-- Page hero -->
+    <section class="pagehero">
+      <div class="content">
+        <p class="kicker">ENGINEERING / MECHATRONICS</p>
+        <h1>Mechatronics — precision motion and embedded control.</h1>
+        <p class="lead">
+          Building practical systems where mechanics, electronics and embedded
+          software work together to produce controlled physical motion.
+        </p>
+
+        <div class="pillrow">
+          <span class="pill">STM32</span>
+          <span class="pill">Stepper Motors</span>
+          <span class="pill">Embedded C/C++</span>
+          <span class="pill">Motion Control</span>
+          <span class="pill">Electronics</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- General mechatronics -->
+    <section class="content">
+      <div class="contentgrid">
+
+        <article class="block">
+          <p class="kicker">EMBEDDED</p>
+          <h2>Embedded Control</h2>
+          <p>
+            Practical work with microcontrollers, motor drivers, sensors and
+            low-level control logic. The focus is on connecting electronics
+            with physical systems and developing firmware that produces
+            predictable hardware behavior.
+          </p>
+        </article>
+
+        <article class="block">
+          <p class="kicker">MOTION</p>
+          <h2>Motion Systems</h2>
+          <p>
+            Development and testing of electromechanical motion systems using
+            stepper motors, drivers, belts and linear mechanisms. Motion is
+            controlled through programmable position, direction and speed
+            parameters.
+          </p>
+        </article>
+
+        <article class="block">
+          <p class="kicker">ROBOTICS</p>
+          <h2>Robotics</h2>
+          <p>
+            Hands-on development of robotic platforms combining mechanical
+            structures, actuators, electronics and control systems. The goal is
+            to move from individual components to complete working machines.
+          </p>
+        </article>
+
+        <article class="block">
+          <p class="kicker">DEVELOPMENT</p>
+          <h2>From Prototype to System</h2>
+          <p>
+            The engineering workflow covers mechanical assembly, electrical
+            integration, firmware development, calibration and iterative
+            testing. Each prototype is used as a practical platform for
+            developing the next level of the system.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- One-Axis project -->
+    <section class="content">
+      <div class="sectionhead">
+        <p class="kicker">PROJECT 01</p>
+        <h2>One-Axis Linear Motion System</h2>
+      </div>
+
+      <article class="block">
+        <p>
+          A compact one-axis linear motion system developed as a practical
+          mechatronics platform for studying electromechanical integration,
+          embedded control and programmable motion. The system combines a
+          belt-driven linear mechanism with a NEMA17 stepper motor, an A4988
+          stepper driver and an Arduino Uno R3 controller. The motor is powered
+          from a 12 V supply, while the Arduino generates STEP and DIRECTION
+          control signals for the driver. The linear axis provides an 800 mm
+          working range, allowing the carriage to be moved along the X-axis
+          through programmed motion sequences. The system was assembled and
+          tested from the component level, including motor wiring, driver
+          configuration, power connection, controller programming and
+          mechanical motion testing. Motion can be controlled by adjusting the
+          number of motor steps, movement direction and stepping rate, making
+          it possible to implement repeatable linear positioning and different
+          programmed movement sequences. The project provides practical
+          experience across mechanical assembly, electronics, stepper-motor
+          control and embedded programming, and serves as a foundation for
+          further development with limit switches, automated homing, improved
+          positioning accuracy and more advanced motion-control functions.
+        </p>
+
+        <div class="project-media">
+          <h3>Hardware Setup</h3>
+          <video class="project-video" controls preload="metadata">
+            <source src="Oneaxis1.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+          <p class="media-caption">
+            Overview of the one-axis linear motion system, including the NEMA17
+            stepper motor, A4988 driver, Arduino Uno, power supply, wiring and
+            belt-driven linear mechanism.
+          </p>
+        </div>
+
+        <div class="project-media">
+          <h3>Motion Test</h3>
+          <video class="project-video" controls preload="metadata">
+            <source src="Oneaxis.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+          <p class="media-caption">
+            Demonstration of the carriage moving along the 800 mm linear
+            working range under programmed STEP/DIR stepper-motor control.
+          </p>
+        </div>
+      </article>
+    </section>
+
+
+    <!-- RoboWar Car project -->
+    <section class="content">
+      <div class="sectionhead">
+        <p class="kicker">PROJECT 02</p>
+        <h2>RoboWar Car</h2>
+      </div>
+
+      <article class="block">
+        <p>
+          A custom-built robotic vehicle developed as a practical platform for
+          exploring mobile robotics, mechanical design, remote control and
+          electromechanical systems. The vehicle is based on a rigid metal
+          chassis with four large off-road wheels and a mechanically actuated
+          front assembly. The platform was assembled from individual mechanical
+          components and adapted for remote-controlled operation using a FlySky
+          radio transmitter. The project combines mechanical fabrication,
+          chassis construction, wheel and steering mechanisms, electrical
+          wiring and radio-control integration. The design provides a
+          foundation for further development of a remotely controlled robotic
+          platform, including improved drive control, steering, onboard
+          electronics and autonomous functions.
+        </p>
+
+        <div class="project-image-grid">
+          <img
+            class="project-image"
+            src="robocar1.JPG"
+            alt="RoboWar Car — front and top view"
+            loading="lazy"
+          >
+
+          <img
+            class="project-image"
+            src="robocar2.JPG"
+            alt="RoboWar Car — rear view"
+            loading="lazy"
+          >
+        </div>
+      </article>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <div class="content">
+      <p>© 2026 NANOENGINEER SAM.</p>
     </div>
-    <a href="index.html#projects">Projects</a>
-    <a href="index.html#about">About</a>
-    <a href="index.html#contact">Contact</a>
-    <a class="cv" href="#" title="Add your CV PDF link here">CV ↗</a>
-  </nav>
-</header>
-<section class="pagehero"><div class="inner"><div class="kicker">ENGINEERING / MECHATRONICS</div><h1>Mechatronics — <em>precision motion and embedded control.</em></h1><p class="lead">Building practical systems where mechanics, electronics and embedded software come together to produce controlled physical motion.</p><div class="pillrow"><span class="pill">STM32</span><span class="pill">Stepper Motors</span><span class="pill">Embedded C/C++</span><span class="pill">Motion Control</span><span class="pill">Electronics</span></div></div></section>
-<main class="content"><div class="contentgrid">
-<div class="block"><h2>Embedded</h2><p>STM32-based control is a current focus, including GPIO, timing, STEP/DIR interfaces and firmware for deterministic motion.</p></div>
-<div class="block"><h2>Motion</h2><p>Stepper motors, drivers, positioning mechanics and control logic form the practical foundation for precision mechatronic systems.</p></div>
-<div class="block"><h2>OpenDerm</h2><p>A hands-on robotics project used to develop practical experience across electronics, embedded control, mechanical integration and system-level debugging.</p></div>
-<div class="block"><h2>Development</h2><p>Hardware → firmware → physical motion. The goal is to understand and integrate the complete chain rather than treating electronics, software and mechanics as isolated disciplines.</p></div>
-</div></main><footer><span>NANOENGINEER SAM.</span><a href="index.html">← HOME</a></footer></body></html>
+  </footer>
+
+</body>
+</html>
